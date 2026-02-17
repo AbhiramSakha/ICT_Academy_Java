@@ -1,47 +1,57 @@
-/*Write a program to execute the datas with the statement.
+# **Day-01 JAVA Q2**
 
-Input Format
+## **Question**
 
-first input corresponds to integer
-second input corresponds to float
-third input corresponds to char
-fourth input correspond to string
-fifth input correspond to String
-Constraints
+**Write a program to execute the data with the following statements.**
 
-No Constraints
+**Input Format:**
+- **First input corresponds to integer**
+- **Second input corresponds to float**
+- **Third input corresponds to char**
+- **Fourth input corresponds to string**
+- **Fifth input corresponds to String**
 
-Output Format
+**Constraints:**
+- **No Constraints**
 
-execute the user inputs with the statemets
-Sample Input 0
+**Output Format:**
+- **Execute the user inputs with the statements**
 
+**Sample Input:**
 23
 45.56
 A
 hello
 hello world
-Sample Output 0
 
+**Sample Output:**
 Integer is 23
 Float is 45.56
 Character is A
-Strings are hello and hello world.*/
+Strings are hello and hello world.
 
+
+---
+
+## **Answer**
+
+```java
 import java.io.*;
 import java.util.*;
 
-public class Day-01-JAVA-Q2 {
+public class Day01JAVAQ2 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int val = sc.nextInt();
         float f = sc.nextFloat();
         char c = sc.next().charAt(0);
-        String str1=sc.next();
+        String str1 = sc.next();
         sc.nextLine();
-        String str2=sc.nextLine();
-        System.out.println("Integer is "+ val+"\n"+"Float is "+ f+"\n"+"Character is "+ c+"\n"+ "Strings are "+ str1 + " and "+ str2);
+        String str2 = sc.nextLine();
+        System.out.println("Integer is " + val + "\n" +
+                           "Float is " + f + "\n" +
+                           "Character is " + c + "\n" +
+                           "Strings are " + str1 + " and " + str2);
     }
 }
-
