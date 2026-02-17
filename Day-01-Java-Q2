@@ -44,3 +44,4 @@ public class Day-01-JAVA-Q2 {
         System.out.println("Integer is "+ val+"\n"+"Float is "+ f+"\n"+"Character is "+ c+"\n"+ "Strings are "+ str1 + " and "+ str2);
     }
 }
+
