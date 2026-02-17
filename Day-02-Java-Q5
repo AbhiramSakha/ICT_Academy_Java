@@ -42,3 +42,5 @@ public class Solution {
         System.out.printf("%d\n%d\n%d\n%d\n%d", (int)Math.floor(num), (int)Math.ceil(num), Math.round(num), (int)Math.sqrt(sqrtNum), (int)Math.pow(base, power));
     }
 }
+
+
