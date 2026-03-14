@@ -1,0 +1,77 @@
+/*Sheela wants to find the common data in the two different lists. Could you please help to find it and implement the program. Both lists are non Duplicate data
+
+Note-if the data are not found from the list return the Statement Data Not found.
+
+Input Format
+
+First Input Corresponds to the array size. Second Input Corresponds to the array elements of arr1. Third Input corresponds to the array elements of arr2.
+
+Constraints
+
+No Constraints
+
+Output Format
+
+Find the common datas from the two lists.
+
+Sample Input 0
+
+4
+a b e f
+e d h a
+Sample Output 0
+
+The Common data are a e
+Sample Input 1
+
+4
+m o d g
+a b c e
+Sample Output 1*
+
+#Answer
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        String[] arr1 = new String[n];
+        String[] arr2 = new String[n];
+
+        for(int i = 0; i < n; i++){
+            arr1[i] = sc.next();
+        }
+
+        for(int i = 0; i < n; i++){
+            arr2[i] = sc.next();
+        }
+
+        List<String> common = new ArrayList<>();
+
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++){
+                if(arr1[i].equals(arr2[j])){
+                    common.add(arr1[i]);
+                }
+            }
+        }
+
+        if(common.isEmpty()){
+            System.out.println("Data Not Found");
+        } else {
+            System.out.print("The Common data are ");
+            for(String s : common){
+                System.out.print(s + " ");
+            }
+        }
+
+        sc.close();
+    }
+}
+Cont
