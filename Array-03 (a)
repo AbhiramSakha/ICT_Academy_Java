@@ -1,0 +1,60 @@
+/*Write a program to find the maximum element in an array.
+
+Input Format
+
+Input consists of 1 integer and 1 array. Integer corresponds to the size of the array.
+
+Constraints
+
+No Constraints
+
+Output Format
+
+Find max value in the array.
+
+Sample Input 0
+
+4
+67
+33
+89
+45
+Sample Output 0
+
+Max=89
+Sample Input 1
+
+7
+9
+14
+23
+2
+11
+4
+6
+Sample Output 1*/
+
+#Answer
+
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();          
+        int max = Integer.MIN_VALUE; 
+
+        for (int i = 0; i < n; i++) {
+            int num = sc.nextInt();
+            if (num > max) {
+                max = num;
+            }
+        }
+
+        System.out.println("Max=" + max);
+    }
+}
+Contest ends in 7 months
