@@ -30,24 +30,24 @@ Sample Output 1
 Mean:5.75*/
 
 ##Output:
-with Ada.Text_IO, Ada.Integer_Text_IO;
-use Ada;
+
+with Ada.Text_IO, Ada.Integer_Text_IO, Ada.Float_Text_IO;
 
 procedure Solution is
-   N   : Integer;
-   Sum : Integer := 0;
-   Arr : Integer;
+   N    : Integer;
+   Sum  : Integer := 0;
+   X    : Integer;
    Mean : Float;
 begin
    Ada.Integer_Text_IO.Get(N);
 
    for I in 1 .. N loop
-      Ada.Integer_Text_IO.Get(Arr);
-      Sum := Sum + Arr;
+      Ada.Integer_Text_IO.Get(X);
+      Sum := Sum + X;
    end loop;
 
    Mean := Float(Sum) / Float(N);
 
    Ada.Text_IO.Put("Mean:");
-   Ada.Float_Text_IO.Put(Mean, Fore => 1, Aft => 2, Exp => 0);
+   Ada.Float_Text_IO.Put(Item => Mean, Fore => 1, Aft => 2, Exp => 0);
 end Solution;
