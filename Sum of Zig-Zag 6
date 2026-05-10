@@ -1,0 +1,78 @@
+Write a program to find the sum of Zig-Zag pattern in a given matrix.
+
+Input Format
+
+Input consists of 2 integers and 1 2D-array.
+first input correspond to the size of rows and columns.
+second input correspond to the array elements.
+Constraints
+
+No Constraints
+
+Output Format
+
+print the sum of zig zag value.
+Sample Input 0
+
+3
+3
+1 2 3
+4 5 6
+7 8 9
+Sample Output 0
+
+Sum of Zig-Zag pattern is 35
+Sample Input 1
+
+2
+2
+1 1
+1 2
+Sample Output 1
+Sum of Zig-Zag pattern is 5
+
+##Output
+
+with Ada.Text_IO, Ada.Integer_Text_IO;
+use Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure Solution is
+    Rows, Cols : Integer;
+    Sum : Integer := 0;
+
+    type Matrix_Type is array (Positive range <>, Positive range <>) of Integer;
+begin
+    -- Read rows and columns
+    Get(Rows);
+    Get(Cols);
+
+    declare
+        Matrix : Matrix_Type(1 .. Rows, 1 .. Cols);
+    begin
+        -- Read matrix elements
+        for I in 1 .. Rows loop
+            for J in 1 .. Cols loop
+                Get(Matrix(I, J));
+            end loop;
+        end loop;
+
+        -- First row
+        for J in 1 .. Cols loop
+            Sum := Sum + Matrix(1, J);
+        end loop;
+
+        -- Diagonal elements
+        for I in 2 .. Rows - 1 loop
+            Sum := Sum + Matrix(I, Cols - I + 1);
+        end loop;
+
+        -- Last row
+        if Rows > 1 then
+            for J in 1 .. Cols loop
+                Sum := Sum + Matrix(Rows, J);
+            end loop;
+        end if;
+
+        Put_Line("Sum of Zig-Zag pattern is " & Integer'Image(Sum)(2 .. Integer'Image(Sum)'Last));
+    end;
+end Solution;
