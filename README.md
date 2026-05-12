@@ -1,4 +1,3 @@
-
 📘 ICT Academy Java
 
 Welcome to the ICT Academy Java Repository!
