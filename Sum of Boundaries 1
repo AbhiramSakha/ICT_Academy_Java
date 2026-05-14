@@ -1,0 +1,72 @@
+/*Write a program to find the sum of boundaries of a given matrix
+
+Input Format
+
+first input corresponds to the array size of row and column.
+second input corresponds to the array elements.
+Constraints
+
+No Constraints
+
+Output Format
+
+print the sum of boundaries value.
+Sample Input 0
+
+3
+3
+5 8 2
+3 6 8
+1 5 9
+Sample Output 0
+
+Sum of boundary is 41
+Sample Input 1
+
+5
+5
+1 3 6 9 3
+-5 7 2 8 1
+4 8 0 2 5
+-11 5 7 2 8
+2 5 13 25 30
+Sample Output 1
+
+Sum of boundary is 99*/
+
+##Output
+
+with Ada.Text_IO, Ada.Integer_Text_IO;
+use Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure Solution is
+    N, M : Integer;
+    Sum  : Integer := 0;
+begin
+    Get(N);
+    Get(M);
+
+    declare
+        Arr : array (1 .. N, 1 .. M) of Integer;
+    begin
+        -- Read matrix
+        for I in 1 .. N loop
+            for J in 1 .. M loop
+                Get(Arr(I, J));
+            end loop;
+        end loop;
+
+        -- Find boundary sum
+        for I in 1 .. N loop
+            for J in 1 .. M loop
+                if I = 1 or I = N or J = 1 or J = M then
+                    Sum := Sum + Arr(I, J);
+                end if;
+            end loop;
+        end loop;
+
+        Put("Sum of boundary is ");
+        Put(Sum, Width => 0);
+        New_Line;
+    end;
+end Solution;
