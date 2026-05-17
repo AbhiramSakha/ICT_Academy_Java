@@ -1,0 +1,43 @@
+with Ada.Text_IO, Ada.Integer_Text_IO;
+
+use Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure Solution is
+    N : Integer;
+    Matrix : array (1 .. 100, 1 .. 100) of Integer;
+begin
+    Get(N);
+
+    for I in 1 .. N loop
+        for J in 1 .. N loop
+            Get(Matrix(I, J));
+        end loop;
+    end loop;
+
+    Put_Line("Array elements are:");
+
+    for I in 1 .. N loop
+        for J in 1 .. N loop
+            Put(Integer'Image(Matrix(I, J))(2 .. Integer'Image(Matrix(I, J))'Last));
+            
+            if J < N then
+                Put(" ");
+            end if;
+        end loop;
+        New_Line;
+    end loop;
+
+    Put_Line("Transpose matrix is:");
+
+    for I in 1 .. N loop
+        for J in 1 .. N loop
+            Put(Integer'Image(Matrix(J, I))(2 .. Integer'Image(Matrix(J, I))'Last));
+            
+            if J < N then
+                Put(" ");
+            end if;
+        end loop;
+        New_Line;
+    end loop;
+
+end Solution;
