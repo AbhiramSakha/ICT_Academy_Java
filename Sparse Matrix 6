@@ -1,0 +1,31 @@
+with Ada.Text_IO, Ada.Integer_Text_IO;
+
+use Ada.Text_IO, Ada.Integer_Text_IO;
+
+procedure Solution is
+    N : Integer;
+    Matrix : array (1 .. 100, 1 .. 100) of Integer;
+    Zero_Count : Integer := 0;
+    Total : Integer;
+begin
+    Get(N);
+
+    for I in 1 .. N loop
+        for J in 1 .. N loop
+            Get(Matrix(I, J));
+
+            if Matrix(I, J) = 0 then
+                Zero_Count := Zero_Count + 1;
+            end if;
+        end loop;
+    end loop;
+
+    Total := N * N;
+
+    if Zero_Count > Total / 2 then
+        Put_Line("Matrix is a Sparse Matrix");
+    else
+        Put_Line("Matrix is not a Sparse Matrix");
+    end if;
+
+end Solution;
